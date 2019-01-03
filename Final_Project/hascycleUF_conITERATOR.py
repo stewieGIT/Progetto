@@ -75,26 +75,23 @@ def hasCycleUF(graph, arcList, dimens):
 
     for i in range(0,len(arcList)):
         ind = next(iter) 
-        print("ARCO PRESO DA ITERATORE: ", "(" + str(arcList[ind][0])+", "+str(arcList[ind][1]) + ")" )
+        print("\nITERATOR. Arco scelto: ", "(" + str(arcList[ind][0])+", "+str(arcList[ind][1]) + ")" + "\n")
         a=arcList[ind][0]
         b=arcList[ind][1]
         u=uf.nodes[a]
         v=uf.nodes[b]
-        print("u: ", u)
-        print("v: ", v)
-        print("a: ", a)
-        print("b: ", b)
-        print("find(u): ", uf.find(u))
-        print("find(v): ", uf.find(v))
+
+        print(f'Find sul nodo {u}:\t{uf.find(u)}')
+        print(f'Find sul nodo {v}:\t{uf.find(v)}')
 
         if uf.find(u) == uf.find(v):
-            print("Cycle detected!")
+            print("find(u) == find(v)\n" + "\nCycle detected!\n")
             return
         else:
             uf.union(u, v)
-            print("else union")
+            print("find(u) != find(v) => union(u, v):\n")
             uf.print()
-    print("NO cycle detected.")
+    print("\nNO cycle detected.\n")
     return
 
 
@@ -108,4 +105,3 @@ if __name__ == "__main__":
     ###hascycleUF
 
     hasCycleUF(graph[0],graph[1], dim)
-
