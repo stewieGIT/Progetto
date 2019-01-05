@@ -25,24 +25,6 @@ def timer(func):
         return value
     return wrapping_function
 
-"""
-def timerDFS(func):
-    def wrapping_function(arg1, arg2):
-        start=time()
-        value=func(arg1, arg2)
-        elapsed=time()-start
-        file=open("result.txt", "a")
-        space="------------------------"+str(func)+"\n"
-        string="n:\t" + str(arg2) + "\n"
-        string2="t:\t" + str(elapsed) + "\n"
-        file.write(space)
-        file.write(string)
-        file.write(string2)
-        file.close()
-        return value
-
-    return wrapping_function
-"""
 
 def timerDFS(func):
     """
