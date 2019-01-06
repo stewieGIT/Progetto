@@ -1,5 +1,6 @@
 from ufCheckQuickUnion import hasCycleUFQU,hasCycleUFQUB
 from ufCheckQuickFind import hasCycleUFQF,hasCycleUFQFB
+from dfsCheck import hasCycleDfs
 from creaGrafiRand import creaGrafiRC,creaGrafiRWC
 from time import time
 if __name__ == "__main__":
@@ -15,6 +16,8 @@ if __name__ == "__main__":
     tempoUFQFBC=[]
     #dim=[5,10,25,50,100,250,500,1000,2500] #NB gia con n=1000 e 2500 la creazione del grafo è molto lenta
     #dim = [5, 10, 25, 50]                  # sono inseriti principalmente per fare i grafici
+    dim=[0,1,2]  #NB per dim=0 nelle dfs vi è un controllo per ritornare sempre 0.0,(ma in realta potrebbe impiegare
+    #un po per la chiamata)in quanto viene fatta una dfs da ogni nodo presi i tempi e fatta la media,altrimenti dividerebbe per 0
 
     #GRAFI CON CICLI
 
@@ -54,16 +57,16 @@ if __name__ == "__main__":
         print("\nUFQuickFindCheck time elapsed with graph (cycle) dimension:", dim[i], "-->", elapsed)
 
         # DFS
-
-        nodes = graph_C[0].getNodes()
-        start = time()
-        for node in nodes:  # viene fatta la dfs da ogni nodo e poi la media
-            print(f'\nDFS partendo dal nodo {node}:')
+        if dim[i]==0:
+            elapsed=0.0
+            tempoDFSC.append(elapsed)
+            print("\nDFScheck avg time elapsed with graph (cycle) dimension:", dim[i], "-->", elapsed)
+        else:
             start = time()
-            s = graph_C[0].dfs(node.id, dim)
-        elapsed = (time() - start) / dim[i]
-        tempoDFSC.append(elapsed)
-        print("\nDFScheck time elapsed with graph (cycle) dimension:", dim[i], "-->", elapsed)
+            hasCycleDfs(graph_C,dim[i])
+            elapsed = (time() - start) / dim[i]
+            tempoDFSC.append(elapsed)
+            print("\nDFScheck avg time elapsed with graph (cycle) dimension:", dim[i], "-->", elapsed)
 
     # GRAFI SENZA CICLI
 
@@ -101,14 +104,16 @@ if __name__ == "__main__":
         print("\nUFQuickUnionCheck time elapsed with graph (not cycle) dimension:", dim[i], "-->", elapsed)
 
         # DFS
-        nodes = graph_WC[0].getNodes()
-        start = time()
-        for node in nodes:  # viene fatta la dfs da ogni nodo e poi la media
-            print(f'\nDFS partendo dal nodo {node}:')
-            s = graph_WC[0].dfs(node.id, dim)
-        elapsed = (time() - start) / dim[i]
-        tempoDFSWC.append(elapsed)
-        print("\nDFScheck time elapsed with graph (not cycle) dimension:", dim[i], "-->", elapsed)
+        if dim[i]==0:
+            elapsed=0.0
+            tempoDFSC.append(elapsed)
+            print("\nDFScheck avg time elapsed with graph (cycle) dimension:", dim[i], "-->", elapsed)
+        else:
+            start = time()
+            hasCycleDfs(graph_WC,dim[i])
+            elapsed = (time() - start) / dim[i]
+            tempoDFSWC.append(elapsed)
+            print("\nDFScheck avg time elapsed with graph (not cycle) dimension:", dim[i], "-->", elapsed)
 
     print("\nDFS cycle array",tempoDFSC)
     print("DFS without cycle array",tempoDFSWC)

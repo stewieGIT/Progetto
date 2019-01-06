@@ -22,6 +22,12 @@ class edgeIter:
 
 @timer
 def hasCycleUFQFB(graph, arcList, dimens):
+    if dimens==0:
+        print("Empty graph can't build a unionFind data structure")
+        return
+    if dimens==1 or dimens==2:
+        print("\nGraph with dimension=1 or dimension=2 can't contain a cycle")
+        return
     uf=QuickFindBalanced()
     nodes=graph.getNodes()
     for n in nodes:
@@ -55,6 +61,12 @@ def hasCycleUFQFB(graph, arcList, dimens):
 
 @timer
 def hasCycleUFQF(graph, arcList, dimens):
+    if dimens==0:
+        print("Empty graph can't build a unionFind data structure")
+        return
+    if dimens==1 or dimens==2:
+        print("\nGraph with dimension=1 or dimension=2 can't contain a cycle")
+        return
     uf=QuickFind()
     nodes=graph.getNodes()
     for n in nodes:
@@ -87,7 +99,7 @@ def hasCycleUFQF(graph, arcList, dimens):
 
 if __name__ == "__main__":
 
-    dim=500
+    dim=100
     #ritornano una lista graph = [grafo, listaArchi]
 
     # MANUAL GRAPH

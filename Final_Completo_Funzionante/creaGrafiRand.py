@@ -6,6 +6,11 @@ import graph.Graph_AdjacencyList as grafo
 # Viene creato un grafo con ciclo in cui ogni vertuce ha un arco col successivo e l'ultimo vertice ne ha uno con il primo
 
 def creaGrafiRC(dim):
+    if dim==0:
+        a = []
+        a.append(None)
+        a.append(None)
+        return a
     random.seed(2)
     graph = grafo.GraphAdjacencyList()
 
@@ -62,6 +67,11 @@ def creaGrafiRC(dim):
 # i cui vertici hanno chiave random
 
 def creaGrafiRWC(dim):
+    if dim==0:
+        a = []
+        a.append(None)
+        a.append(None)
+        return a
     random.seed(2)
     graph = grafo.GraphAdjacencyList()
 
