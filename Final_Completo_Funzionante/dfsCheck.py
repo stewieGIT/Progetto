@@ -29,8 +29,8 @@ if __name__ == "__main__":
 
     # RANDOM GRAPH
 
-    graph = creaGrafiRC(dim)  # è un grafo con ciclo con vertici random (ciclo a cerchio)
-    #graph = creaGrafiRWC(dim) # è un grafo senza ciclo con vertici random
+    #graph = creaGrafiRC(dim)  # è un grafo con ciclo con vertici random (ciclo a cerchio)
+    graph = creaGrafiRWC(dim) # è un grafo senza ciclo con vertici random
     # (come sopra senza l'arco che collega l'ultimo vertice al primo)
 
     # hasCycleDfs
