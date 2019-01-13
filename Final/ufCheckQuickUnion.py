@@ -196,3 +196,5 @@ if __name__ == "__main__":
 
     hasCycleUFQU(graph[0],graph[1],dim)   #dim serve per il decorator
     hasCycleUFQUB(graph[0], graph[1], dim)
+    hasCycleUFQUBPC(graph[0],graph[1],dim)
+    hasCycleUFQUBPS(graph[0],graph[1],dim)
