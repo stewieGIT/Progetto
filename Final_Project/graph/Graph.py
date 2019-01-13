@@ -325,12 +325,15 @@ class GraphBase(ABC):
                 if adj_node not in explored:
                     s.push(adj_node)
             dfs_nodes.append(node)
+
             # viene aggiunto un semplice controllo,se nella dfs si passa per un nodo piu volte
             # allora ce' un ciclo e si ritorna true
+
             if dfs_nodes.count(node)>1:
                 print("Cycle detected!")
                 return True
         # se il while termina il ciclo non cè e si ritorna false
+
         print("NOT cycle.")
         return False
         # viene sacrificato per ritornare True/False il return dfs

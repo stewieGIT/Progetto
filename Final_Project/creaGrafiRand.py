@@ -3,7 +3,7 @@ import graph.Graph_AdjacencyList as grafo
 
 # In questo file vengono generati grafi random con e senza cicli per la fase di testing
 
-# Viene creato un grafo con ciclo in cui ogni vertuce ha un arco col successivo e l'ultimo vertice ne ha uno con il primo
+# Viene creato un grafo con ciclo in cui ogni vertice ha un arco col successivo e l'ultimo vertice ne ha uno con il primo
 
 def creaGrafiRC(dim):
     if dim==0:
