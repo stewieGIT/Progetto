@@ -22,9 +22,9 @@ if __name__ == "__main__":
     tempoUFQUBPCWC = []    #tempo UnionFindCheck con QuickUnionBalancedPathCompression in grafo senza ciclo
     tempoUFQUBPSWC = []    #tempo UnionFindCheck con QuickUnionBalancedPathSplitting in grafo senza ciclo
 
-    #dim=[5,10,25,50,100,250,500,1000,2500] #NB gia con n=1000 e 2500 la creazione del grafo è molto lenta
+    dim=[5,10,25,50,100,250,500,1000] #NB gia con n=1000 la creazione del grafo è molto lenta
     #dim = [5, 10, 25, 50]                  # sono inseriti principalmente per fare i grafici
-    dim=[0,1,2]  #NB per dim=0 nelle dfs vi è un controllo per ritornare sempre 0.0,(ma in realta potrebbe impiegare
+    #dim=[0,1,2]  #NB per dim=0 nelle dfs vi è un controllo per ritornare sempre 0.0,(ma in realta potrebbe impiegare
     #un po per la chiamata)in quanto viene fatta una dfs da ogni nodo presi i tempi e fatta la media,altrimenti dividerebbe per 0
 
     #GRAFI CON CICLI
