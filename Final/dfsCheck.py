@@ -1,7 +1,6 @@
 from creaGrafiMan import creaGraf1, creaGraf2, creaGraf3, creaGraf4
 from creaGrafiRand import creaGrafiRC,creaGrafiRWC
 from time import time
-from sys import exit
 
 def hasCycleDfs(graph,dim):
     if dim==0:
