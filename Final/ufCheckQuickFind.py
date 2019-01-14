@@ -49,13 +49,13 @@ def hasCycleUFQFB(graph, arcList, dimens):
 
         if uf.find(u) == uf.find(v):
             print("find(u) == find(v)\n" + "\nCycle detected!\n")
-            return
+            return True
         else:
             uf.union(uf.findRoot(u),uf.findRoot(v) )
             print("find(u) != find(v) => union(u, v):\n")
             uf.print()
     print("\nNO cycle detected.\n")
-    return
+    return False
 
 #QUICKFIND
 
@@ -88,13 +88,13 @@ def hasCycleUFQF(graph, arcList, dimens):
 
         if uf.find(u) == uf.find(v):
             print("find(u) == find(v)\n" + "\nCycle detected!\n")
-            return
+            return True
         else:
             uf.union(uf.findRoot(u),uf.findRoot(v) )
             print("find(u) != find(v) => union(u, v):\n")
             uf.print()
     print("\nNO cycle detected.\n")
-    return
+    return False
 
 
 if __name__ == "__main__":
