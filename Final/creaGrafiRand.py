@@ -4,6 +4,7 @@ import graph.Graph_AdjacencyList as grafo
 # In questo file vengono generati grafi random con e senza cicli per la fase di testing
 
 # Viene creato un grafo con ciclo in cui ogni vertuce ha un arco col successivo e l'ultimo vertice ne ha uno con il primo
+#Il grafo creato e' il caso peggiore di grafo con ciclo in quanto quest'ultimo per essere trovato richiede che sia percorso l'intero grafo, in generale la dfs potrebbe essere ancora più veloce
 
 def creaGrafiRC(dim):
     if dim==0:
