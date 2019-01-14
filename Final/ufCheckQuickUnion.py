@@ -24,7 +24,7 @@ class edgeIter:
 def hasCycleUFQUBPC(graph, arcList, dimens):
     if dimens==0:
         print("Empty graph can't build a unionFind data structure")
-        return
+        return 
     if dimens==1 or dimens==2:
         print("\nGraph with dimension=1 or dimension=2 can't contain a cycle")
         return
@@ -49,13 +49,13 @@ def hasCycleUFQUBPC(graph, arcList, dimens):
 
         if uf.find(u) == uf.find(v):
             print("find(u) == find(v)\n" + "\nCycle detected!\n")
-            return
+            return True
         else:
             uf.union(u, v)
             print("find(u) != find(v) => union(u, v):\n")
             uf.print()
     print("\nNO cycle detected.\n")
-    return
+    return False
 
 #QUICKUNION BALANCED WITH PATH SPLITTING
 
@@ -88,13 +88,13 @@ def hasCycleUFQUBPS(graph, arcList, dimens):
 
         if uf.find(u) == uf.find(v):
             print("find(u) == find(v)\n" + "\nCycle detected!\n")
-            return
+            return True
         else:
             uf.union(u, v)
             print("find(u) != find(v) => union(u, v):\n")
             uf.print()
     print("\nNO cycle detected.\n")
-    return
+    return False
 
 #QUICKUNION BALANCED
 
@@ -127,13 +127,13 @@ def hasCycleUFQUB(graph, arcList, dimens):
 
         if uf.find(u) == uf.find(v):
             print("find(u) == find(v)\n" + "\nCycle detected!\n")
-            return
+            return True
         else:
             uf.union(u, v)
             print("find(u) != find(v) => union(u, v):\n")
             uf.print()
     print("\nNO cycle detected.\n")
-    return
+    return False 
 
 # QUICKUNION
 
@@ -166,13 +166,13 @@ def hasCycleUFQU(graph, arcList, dimens):
 
         if uf.find(u) == uf.find(v):
             print("find(u) == find(v)\n" + "\nCycle detected!\n")
-            return
+            return True
         else:
             uf.union(u, v)
             print("find(u) != find(v) => union(u, v):\n")
             uf.print()
     print("\nNO cycle detected.\n")
-    return
+    return False
 
 
 if __name__ == "__main__":
